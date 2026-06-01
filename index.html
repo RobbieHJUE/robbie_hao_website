@@ -305,6 +305,61 @@
     </dl>
   </section>
 
+  <section id="interests" class="fade d4">
+    <div class="sec-head"><span class="num">§06</span><h2>Beyond</h2></div>
+    <div class="prose">
+      <p>Away from the terminal, I ski and surf whenever the season allows, and I spend much of my free time on photography. To me, photography is not simply about preserving a beautiful view or freezing a moment in time. Every photograph reflects a choice: what I noticed, what I left outside the frame, and why that particular scene made me pause. The moment I press the shutter often captures my own thoughts and emotions as much as it captures the subject in front of me. Sometimes a photo becomes meaningful only much later, when I look back and realize how closely it was tied to a certain period of my life. I enjoy the quiet attention that photography requires, especially the feeling of finding something worth remembering in an ordinary place. Through photographs, I can revisit not only what I saw, but also how I felt and who I was at that moment.</p>
+    </div>
+  </section>
+ 
+  <section id="work" class="fade d4">
+    <div class="sec-head"><span class="num">§07</span><h2>Some of My Work</h2></div>
+ 
+    <!-- ============================================================
+         PHOTO VIEWER — one image at a time, click Next to browse.
+         To add your photos:
+           1. Make a folder "photos" next to index.html.
+           2. Drop in 01.jpg, 02.jpg, ... (any size; shown whole).
+           3. Edit each <div class="slide"> below:
+                data-src   -> the file, e.g. photos/01.jpg
+                data-title -> caption title
+                data-meta  -> small line under it (place / year)
+           4. Add or remove .slide lines freely — order = view order.
+         The titles/years below are placeholder demo text — replace them.
+         ============================================================ -->
+ 
+    <div class="viewer" id="viewer">
+      <div class="slides" hidden>
+        <div class="slide" data-src="photos/01.jpg" data-title="Untitled" data-meta="Reykjavík · 2024"></div>
+        <div class="slide" data-src="photos/02.jpg" data-title="Untitled" data-meta="Durham · 2024"></div>
+        <div class="slide" data-src="photos/03.jpg" data-title="Untitled" data-meta="Big Sur · 2024"></div>
+        <div class="slide" data-src="photos/04.jpg" data-title="Untitled" data-meta="Tokyo · 2023"></div>
+        <div class="slide" data-src="photos/05.jpg" data-title="Untitled" data-meta="Dalian · 2023"></div>
+        <div class="slide" data-src="photos/06.jpg" data-title="Untitled" data-meta="Hokkaido · 2023"></div>
+      </div>
+ 
+      <div class="stage" id="stage">
+        <span class="ph" id="ph">photos/01.jpg</span>
+        <img id="photo" src="" alt="">
+        <button class="expand" id="expand" aria-label="Fullscreen">&#10530;</button>
+      </div>
+ 
+      <div class="progress"><span id="bar"></span></div>
+ 
+      <div class="controls">
+        <div class="caption">
+          <span class="t" id="cap-title"></span>
+          <span class="m" id="cap-meta"></span>
+        </div>
+        <div class="pager">
+          <button id="prev">&#8249; Prev</button>
+          <span class="count" id="count"></span>
+          <button id="next">Next &#8250;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="contact" class="fade d4">
     <div class="sec-head"><span class="num">§06</span><h2>Contact</h2></div>
     <div class="prose">
