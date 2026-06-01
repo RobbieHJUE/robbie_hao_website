@@ -1,1 +1,324 @@
+<!-- =====================================================================
+     Personal website — Robbie Hao
+     Single-file static page. Deploy by dropping into your repo as
+     index.html (GitHub Pages) or importing the repo into Vercel.
 
+     >>> THINGS TO REPLACE (search for the word PLACEHOLDER):
+       - email address
+       - LinkedIn URL
+       - resume file: add resume.pdf next to this file
+       - any project metric / wording you want to sharpen
+     ===================================================================== -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Robbie Hao — Quantitative Research</title>
+<meta name="description" content="Robbie Hao — M.S. Statistics, Duke. Quantitative factor research and statistical machine learning." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --paper:    #f5f3ec;
+    --ink:      #1b1a16;
+    --ink-soft: #58534a;
+    --accent:   #b1411f;
+    --line:     rgba(27,26,22,0.14);
+    --grid:     rgba(27,26,22,0.04);
+    --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    --serif: "Newsreader", Georgia, "Times New Roman", serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--paper);
+    background-image:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 26px 26px;
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 18px;
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 28px 120px;
+  }
+
+  /* ---- top bar ---- */
+  header.bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 26px 0 22px;
+    border-bottom: 1px solid var(--line);
+    font-family: var(--mono);
+    font-size: 12.5px;
+    letter-spacing: 0.04em;
+  }
+  header.bar .id { font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; }
+  header.bar nav a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    margin-left: 18px;
+  }
+  header.bar nav a:hover { color: var(--accent); }
+
+  /* ---- hero ---- */
+  .hero { padding: 64px 0 56px; }
+  .hero .eyebrow {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-family: var(--mono);
+    font-weight: 700;
+    font-size: clamp(38px, 8vw, 66px);
+    line-height: 0.98;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+  }
+  .hero .lede {
+    font-size: clamp(20px, 3vw, 24px);
+    line-height: 1.5;
+    max-width: 56ch;
+    color: var(--ink);
+  }
+  .hero .meta {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-top: 28px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 22px;
+  }
+  .hero .meta a { color: var(--ink-soft); text-decoration: none; border-bottom: 1px solid var(--line); padding-bottom: 1px; }
+  .hero .meta a:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* ---- sections ---- */
+  section { padding-top: 56px; }
+  .sec-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--line);
+  }
+  .sec-head .num {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.04em;
+  }
+  .sec-head h2 {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink);
+  }
+
+  .prose p { max-width: 62ch; margin-bottom: 16px; }
+  .prose p:last-child { margin-bottom: 0; }
+  .prose a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(177,65,31,0.35); }
+  .prose a:hover { border-color: var(--accent); }
+
+  /* ---- project list ---- */
+  .proj { padding: 26px 0; border-bottom: 1px solid var(--line); }
+  .proj:last-child { border-bottom: none; }
+  .proj .row1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 8px;
+  }
+  .proj h3 { font-size: 23px; font-weight: 600; line-height: 1.2; }
+  .proj h3 a { color: var(--ink); text-decoration: none; }
+  .proj h3 a:hover { color: var(--accent); }
+  .proj .yr { font-family: var(--mono); font-size: 12.5px; color: var(--ink-soft); white-space: nowrap; }
+  .proj p { max-width: 64ch; margin-bottom: 14px; color: var(--ink); }
+  .tags { display: flex; flex-wrap: wrap; gap: 7px; }
+  .tags span {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.03em;
+    color: var(--ink-soft);
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    padding: 3px 8px;
+  }
+
+  /* ---- stack grid ---- */
+  .stack {
+    font-family: var(--mono);
+    font-size: 13px;
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 12px 22px;
+    color: var(--ink);
+  }
+  .stack dt { color: var(--accent); }
+  .stack dd { color: var(--ink-soft); }
+
+  /* ---- resume button ---- */
+  .btn {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    color: var(--paper);
+    background: var(--ink);
+    text-decoration: none;
+    padding: 12px 22px;
+    border: 1px solid var(--ink);
+    transition: background 0.15s, color 0.15s;
+  }
+  .btn:hover { background: var(--accent); border-color: var(--accent); }
+
+  /* ---- footer ---- */
+  footer {
+    margin-top: 80px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-soft);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* ---- load animation ---- */
+  .fade { opacity: 0; transform: translateY(12px); animation: rise 0.7s cubic-bezier(.2,.7,.2,1) forwards; }
+  @keyframes rise { to { opacity: 1; transform: none; } }
+  .d1 { animation-delay: 0.05s; } .d2 { animation-delay: 0.13s; }
+  .d3 { animation-delay: 0.21s; } .d4 { animation-delay: 0.29s; }
+  @media (prefers-reduced-motion: reduce) { .fade { animation: none; opacity: 1; transform: none; } }
+
+  @media (max-width: 560px) {
+    body { font-size: 17px; }
+    .stack { grid-template-columns: 1fr; gap: 4px 0; }
+    .stack dt { margin-top: 10px; }
+    header.bar nav a:first-child { margin-left: 0; }
+  }
+</style>
+
+<div class="wrap">
+
+  <header class="bar">
+    <span class="id">Robbie Hao</span>
+    <nav>
+      <a href="#about">about</a>
+      <a href="#experience">experience</a>
+      <a href="#research">research</a>
+      <a href="#contact">contact</a>
+    </nav>
+  </header>
+
+  <div class="hero fade d1">
+    <div class="eyebrow">Quantitative Research · Statistical Machine Learning</div>
+    <h1>Robbie&nbsp;Hao</h1>
+    <p class="lede">M.S. Statistics at Duke. I work on systematic factor research and statistical machine learning — building predictive pipelines and signal-evaluation workflows on large financial and scientific datasets.</p>
+    <div class="meta">
+      <span>Durham, NC</span>
+      <a href="mailto:jue.hao@duke.edu">jue.hao@duke.edu</a>
+      <a href="https://github.com/RobbieHJUE">github.com/RobbieHJUE</a>
+      <!-- PLACEHOLDER: replace # with your LinkedIn URL -->
+      <a href="#">linkedin</a>
+    </div>
+  </div>
+
+  <section id="about" class="fade d2">
+    <div class="sec-head"><span class="num">§01</span><h2>About</h2></div>
+    <div class="prose">
+      <p>I'm a master's student in Statistics at Duke with applied machine-learning experience building scalable predictive pipelines and evaluation workflows on large datasets. My work centers on systematic factor research, statistical modeling, and time-series analysis — evaluating signals and portfolio performance from financial data.</p>
+      <p>I'm currently exploring reinforcement learning for finance with Prof. Alessio Brini (Duke Pratt), with an interest in non-stationarity and regime-aware methods.<!-- PLACEHOLDER: this sentence is in-progress work, not on your résumé — delete if you'd rather keep it off the public page --></p>
+    </div>
+  </section>
+
+  <section id="experience" class="fade d3">
+    <div class="sec-head"><span class="num">§02</span><h2>Experience</h2></div>
+    <div class="proj">
+      <div class="row1">
+        <h3>Quantitative Research Intern — Fubon Fund</h3>
+        <span class="yr">2024</span>
+      </div>
+      <p>Implemented and backtested 101 Alpha-style factors across ~5,000 equities and 12 years of market data in Python, building a reusable pipeline for systematic signal evaluation. Screened candidates with IC / ICIR analysis, rank-based portfolio tests, correlation checks, and Lasso / Random Forest selection, then validated robustness with Fama–MacBeth and Fama–French regressions. Reported factor performance, signal stability, turnover, and out-of-sample results to senior analysts.</p>
+      <div class="tags">
+        <span>Python</span><span>101 Alphas</span><span>IC / ICIR</span><span>Fama–MacBeth</span><span>Lasso / RF</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="research" class="fade d4">
+    <div class="sec-head"><span class="num">§03</span><h2>Research</h2></div>
+    <div class="proj">
+      <div class="row1">
+        <h3>LR-GMM — Hybrid Statistical Learning Framework</h3>
+        <span class="yr">2024 – 25</span>
+      </div>
+      <p>Developed LR-GMM, combining logistic regression with multi-chain Gaussian Mixture Models to classify nonlinear, high-dimensional medical data. Built an interpretable iterative feature-selection procedure that surfaces statistically significant diagnostic features while improving classification across simulated and real-world datasets.</p>
+      <div class="tags"><span>Gaussian Mixture Models</span><span>Logistic Regression</span><span>Feature Selection</span></div>
+    </div>
+    <div class="proj">
+      <div class="row1">
+        <h3>Multi-Model ML for Diagnostic Prediction</h3>
+        <span class="yr">2024 – 25</span>
+      </div>
+      <p>Co-developed a Python framework integrating nine algorithms (XGBoost, SVM, Random Forest, and others) for automated feature selection on high-dimensional lipidomics data — 498 features across 140 samples — identifying 10 statistically and clinically meaningful biomarkers for DIC risk and reaching ~0.95 AUC.</p>
+      <div class="tags"><span>XGBoost</span><span>SVM</span><span>Random Forest</span><span>Lipidomics</span><span>AUC 0.95</span></div>
+    </div>
+  </section>
+
+  <section id="education" class="fade d4">
+    <div class="sec-head"><span class="num">§04</span><h2>Education</h2></div>
+    <dl class="stack">
+      <dt>2025 – present</dt><dd>M.S. Statistics — Duke University</dd>
+      <dt>2021 – 2025</dt><dd>B.A. Economics &amp; Statistics — Dongbei University of Finance and Economics</dd>
+    </dl>
+  </section>
+
+  <section id="stack" class="fade d4">
+    <div class="sec-head"><span class="num">§05</span><h2>Stack</h2></div>
+    <dl class="stack">
+      <dt>Languages</dt><dd>Python (Pandas · NumPy · SciPy · Matplotlib) · R · SQL</dd>
+      <dt>ML / Stats</dt><dd>XGBoost · LightGBM · Random Forest · Lasso / Ridge · scikit-learn · TensorFlow · RL · Bayesian methods</dd>
+      <dt>Finance</dt><dd>multi-factor equity models · backtesting · factor analysis</dd>
+      <dt>Tools</dt><dd>Git · Linux · Excel</dd>
+    </dl>
+  </section>
+
+  <section id="contact" class="fade d4">
+    <div class="sec-head"><span class="num">§06</span><h2>Contact</h2></div>
+    <div class="prose">
+      <!-- PLACEHOLDER: add resume.pdf next to this file, then this button works -->
+      <p style="margin-bottom:22px;"><a class="btn" href="resume.pdf">Download résumé ↓</a></p>
+      <p>Reach me at <a href="mailto:jue.hao@duke.edu">jue.hao@duke.edu</a>, or on <a href="https://github.com/RobbieHJUE">GitHub</a> and <a href="#">LinkedIn</a>.</p>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Robbie Hao</span>
+    <span>Durham, NC · Authorized to work in the US</span>
+  </footer>
+
+</div>
