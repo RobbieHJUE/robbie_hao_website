@@ -248,7 +248,7 @@
   <section id="about" class="fade d2">
     <div class="sec-head"><span class="num">§01</span><h2>About</h2></div>
     <div class="prose">
-      <p>I'm a master's student in Statistics at Duke with applied machine-learning experience building scalable predictive pipelines and evaluation workflows on large datasets. My work centers on systematic factor research, statistical modeling, and time-series analysis — evaluating signals and portfolio performance from financial data.</p>
+      <p>I'm a master's student in Statistics at Duke with applied machine-learning experience building scalable predictive pipelines and evaluation workflows on large datasets. My work centers on systematic factor research, statistical modeling, and time-series analysis, evaluating signals and portfolio performance from financial data.</p>
       <p>I'm currently exploring reinforcement learning for finance with Dr. Alessio Brini (Duke Pratt), focusing on how trading decisions should adjust when execution costs and market impact shift over time.</p>
     </div>
   </section>
@@ -268,31 +268,25 @@
   </section>
 
   <section id="research" class="fade d4">
-    <div class="sec-head"><span class="num">§03</span><h2>Research</h2></div>
-    <div class="proj">
-      <div class="row1">
-        <h3>LR-GMM — Hybrid Statistical Learning Framework</h3>
-        <span class="yr">2024 – 25</span>
+     <div class="sec-head"><span class="num">§03</span><h2>Research</h2></div>
+     <div class="proj">
+       <div class="row1">
+         <h3>Optimal Execution under Changing Cost Regimes</h3>
+         <span class="yr">2025 – present</span>
+       </div>
+       <p>Reinforcement learning for optimal trade execution, advised by Dr. Alessio Brini (Duke). Instead of training across markets and hoping for generalization, the agent estimates its current cost environment online, rolling spread, available depth, recent volatility, and realized slippage, and conditions execution on that estimate: trading aggressively when liquidity is cheap, waiting or posting passively when it is costly, and accelerating near the deadline. The work measures robustness to controlled out-of-distribution shifts in liquidity-cost and timing-risk regimes, benchmarking cost-conditioned RL against TWAP, single-regime RL, and plain multi-regime RL by implementation shortfall (bps) in the ABIDES-Gym market simulator.</p>
+       <div class="tags">
+         <span>Reinforcement Learning</span><span>ABIDES-Gym</span><span>Market Microstructure</span><span>Almgren–Chriss</span><span>Implementation Shortfall</span></div>
+       </div>
+     <div class="proj">
+       <div class="row1">
+         <h3>Multi-Model ML for Diagnostic Prediction</h3>
+         <span class="yr">2024 – 25</span>
       </div>
-      <p>Developed LR-GMM, combining logistic regression with multi-chain Gaussian Mixture Models to classify nonlinear, high-dimensional medical data. Built an interpretable iterative feature-selection procedure that surfaces statistically significant diagnostic features while improving classification across simulated and real-world datasets.</p>
-      <div class="tags"><span>Gaussian Mixture Models</span><span>Logistic Regression</span><span>Feature Selection</span></div>
+      <p>Co-developed a Python framework integrating nine algorithms (XGBoost, SVM, Random Forest, and others) for automated feature selection on high-dimensional lipidomics data — 498 features across 140 samples — identifying 10 statistically and clinically meaningful biomarkers for DIC risk and reaching ~0.95 AUC.</p>
+      <div class="tags">
+        <span>XGBoost</span><span>SVM</span><span>Random Forest</span><span>Lipidomics</span><span>AUC 0.95</span></div>
     </div>
-    <div class="proj">
-      <div class="row1">
-        <h3>Multi-Model ML for Diagnostic Prediction</h3>
-        <span class="yr">2024 – 25</span>
-      </div>
-      <p>Co-developed a Python framework integrating nine algorithms (XGBoost, SVM, Random Forest, and others) for automated feature selection on high-dimensional lipidomics data, 498 features across 140 samples, identifying 10 statistically and clinically meaningful biomarkers for DIC risk and reaching ~0.95 AUC.</p>
-      <div class="tags"><span>XGBoost</span><span>SVM</span><span>Random Forest</span><span>Lipidomics</span><span>AUC 0.95</span></div>
-    </div>
-  </section>
-
-  <section id="education" class="fade d4">
-    <div class="sec-head"><span class="num">§04</span><h2>Education</h2></div>
-    <dl class="stack">
-      <dt>2025 – present</dt><dd>M.S. Statistics — Duke University</dd>
-      <dt>2021 – 2025</dt><dd>B.A. Economics &amp; Statistics — Dongbei University of Finance and Economics</dd>
-    </dl>
   </section>
 
   <section id="stack" class="fade d4">
