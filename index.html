@@ -248,8 +248,8 @@
   <section id="about" class="fade d2">
     <div class="sec-head"><span class="num">§01</span><h2>About</h2></div>
     <div class="prose">
-      <p>I'm a master's student in Statistics at Duke with applied machine-learning experience building scalable predictive pipelines and evaluation workflows on large datasets. My work centers on systematic factor research, statistical modeling, and time-series analysis, evaluating signals and portfolio performance from financial data.</p>
-      <p>I'm currently exploring reinforcement learning for finance with Dr. Alessio Brini (Duke Pratt), focusing on how trading decisions should adjust when execution costs and market impact shift over time.</p>
+      <p>My work spans systematic factor research, statistical machine learning, and reinforcement learning for financial markets. At Founder Fubon Fund, I researched equity signals across ~5,000 A-shares and 12 years of market data, using factor tests and statistical models to evaluate predictive strength, robustness, and out-of-sample performance.</p>
+      <p>At Duke, I work with Dr. Alessio Brini on reinforcement learning for optimal trade execution. My current research studies how learned execution policies behave under shifts in liquidity and volatility, with a particular focus on reward design, market-regime robustness, and cross-regime transfer.</p>
     </div>
   </section>
 
@@ -260,7 +260,7 @@
         <h3>Quantitative Research Intern — Fubon Fund</h3>
         <span class="yr">2024</span>
       </div>
-      <p>Implemented and backtested 101 Alpha-style factors across ~5,000 equities and 12 years of market data in Python, building a reusable pipeline for systematic signal evaluation. Screened candidates with IC / ICIR analysis, rank-based portfolio tests, correlation checks, and Lasso / Random Forest selection, then validated robustness with Fama–MacBeth and Fama–French regressions. Reported factor performance, signal stability, turnover, and out-of-sample results to senior analysts.</p>
+      <p>I conducted systematic equity-factor research across ~5,000 A-share equities and 12 years of market data, implementing and backtesting 101 Alpha-style signals in Python and building a reusable pipeline for large-scale factor evaluation. I screened candidate signals using IC/ICIR analysis, rank-based portfolio tests, correlation diagnostics, and Lasso/Random Forest selection to identify stronger and less redundant factors, then used Fama–MacBeth and Fama–French regressions to evaluate statistical significance, factor exposures, and robustness. I also analyzed signal stability, turnover, risk-return characteristics, and out-of-sample performance, translating the results into research reports for senior analysts and reusable tools for subsequent factor research.</p>
       <div class="tags">
         <span>Python</span><span>101 Alphas</span><span>IC / ICIR</span><span>Fama–MacBeth</span><span>Lasso / RF</span>
       </div>
@@ -272,9 +272,9 @@
      <div class="proj">
        <div class="row1">
          <h3>Optimal Execution under Changing Cost Regimes</h3>
-         <span class="yr">2025 – present</span>
+         <span class="yr">May 2026 – present</span>
        </div>
-       <p>Reinforcement learning for optimal trade execution, advised by Dr. Alessio Brini (Duke). Instead of training across markets and hoping for generalization, the agent estimates its current cost environment online, rolling spread, available depth, recent volatility, and realized slippage, and conditions execution on that estimate: trading aggressively when liquidity is cheap, waiting or posting passively when it is costly, and accelerating near the deadline. The work measures robustness to controlled out-of-distribution shifts in liquidity-cost and timing-risk regimes, benchmarking cost-conditioned RL against TWAP, single-regime RL, and plain multi-regime RL by implementation shortfall (bps) in the ABIDES-Gym market simulator.</p>
+       <p>This project studies the robustness of reinforcement-learning policies for optimal trade execution under changing market conditions. I built a DQN execution agent in the ABIDES multi-agent limit-order-book simulator, with an observable cost state capturing spread, depth, order-book imbalance, volatility, and realized slippage, and calibrated liquidity and volatility regimes to empirical spread and VIX anchors. During evaluation, I identified a reward-gaming failure mode in which agents rationally left 4–7% of the parent order unexecuted to exploit a linear completion penalty, distorting cross-regime cost comparisons by as much as 30%. I replaced the penalty with terminal market-order settlement priced from the live book, using exact reward folding under γ=1 and regression tests to preserve backward compatibility. With the corrected framework, I ran a cross-regime transfer study across 30 trained policies (3 regimes × 5 seeds × 2 reward designs) and more than 55,000 evaluation episodes on held-out market paths. The results reveal a pronounced asymmetry in regime transfer concentrated along the timing-risk axis: policies trained under high volatility incur roughly twice the execution cost when transferred to calm markets, while policies trained in calm markets transfer to high-volatility conditions with little additional cost.</p>
        <div class="tags">
          <span>Reinforcement Learning</span><span>ABIDES-Gym</span><span>Market Microstructure</span><span>Almgren–Chriss</span><span>Implementation Shortfall</span></div>
        </div>
